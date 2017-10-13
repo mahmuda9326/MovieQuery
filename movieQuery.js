@@ -8,26 +8,34 @@ var movieList = [
 ];
 
 function getMovieTitle( index ){
-  //add code
+console.log(movieList[index].title);
 }
-
+console.log("The title of the movie:");
 console.log(getMovieTitle(3));
 
 function addMovie( movie ){
-  //add code
+  movieList.push(movie);
+  console.log(movieList);
 }
 
-var newMovie = {};
+var newMovie = {title: "The Avengers", year: "2012", length: 143, rating: "8.1", genre: "sci-fi" };
 console.log(addMovie(newMovie));
 
 function movieByRating(){
-  //add code
+  movieList.sort(function(a, b){return b.rating - a.rating});
+  console.log(movieList);;
 }
 
 console.log(movieByRating());
 
 function findByTitle( title ){
-  //add code
-}
-
+  for(var i=0; i<movieList.length; i++)
+  {
+    var temp = movieList[i].title.search(/avengers/i);
+    if(temp > 0)
+    {
+      console.log(movieList[i]);
+    }
+  }
+console.log(findByTitle("avengers"));
 console.log(findByTitle("matrix"));
